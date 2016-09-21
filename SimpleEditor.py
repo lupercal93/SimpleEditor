@@ -32,8 +32,8 @@ def save():
         return save_as()
     else:
         save_text = str(textbox.get(1.0, "end-1c"))
-        f = open(file_path, mode="w")
-        f.write(save_text)
+        with open(file_path, "w") as f:
+            f.write(save_text)
     
 #Save with new path
 def save_as():
@@ -42,10 +42,9 @@ def save_as():
     file_path = os.path.abspath(filename)
     print(file_path)
     save_file = textbox.get(1.0, "end-1c")
-    f = open(file_path, mode="w")
-    f.write(save_file)
-    f.close()
-        
+    with open(file_path, "w") as f:
+        f.write(save_file)
+
 #Creating the root window
 root = Tk()
 root.title("COSC110 - a5 {}".format(file_path))
@@ -55,14 +54,9 @@ root.rowconfigure(0, weight=1)
 #Build a frame to hold all widgets
 frame = ttk.Frame(root, padding ="4")
 frame.grid(column=0, row=0, sticky=(N, S, E, W))
-frame.columnconfigure(0, weight=1)
-frame.rowconfigure(0, weight=1)
-frame.columnconfigure(1, weight=1)
-frame.rowconfigure(1, weight=1)
-frame.columnconfigure(2, weight=1)
-frame.rowconfigure(2, weight=1)
-frame.columnconfigure(3, weight=1)
-frame.rowconfigure(3, weight=1)
+for i in range(4):
+    frame.columnconfigure(i, weight=1)
+    frame.rowconfigure(i, weight=1)
 
 #Build all widgets
 textbox = Text(frame)
