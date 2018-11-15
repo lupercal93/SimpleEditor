@@ -9,9 +9,8 @@ python3 and tkintern
 
 __arch:__
 
-    ```
     sudo pacman -S python3 tk
-    ```
+    
 
 __deb:__
 
