@@ -14,24 +14,17 @@ __arch:__
 
 __deb:__
 
-    ```
     sudo apt-get install python3 python3-tk
-    ```
 
 Clone the repo:
 
-    ```
     git clone git:https://github.com/luperr/SimpleEditor.git
-    ```
 
 make SimpleEditor.py executable
 
-    ```
     chmod +x SimpleEditor.py
-    ```
 
 Finally to run the editor
 
-    ```
     python3 SimpleEditor.py
-    ```
+    
