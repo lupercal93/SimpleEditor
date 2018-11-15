@@ -18,6 +18,7 @@ def new_file():
 def open_file():
     global file_path
     
+    textbox.delete(1.0, END)
     filename = filedialog.askopenfilename()
     file_path = os.path.abspath(filename)
     text = open(file_path, 'r')
